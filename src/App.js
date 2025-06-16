@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+const App  = () => {
+  const [count, setCount] = useState (0);
+  const [showText, setShowText] = useState (true);
+  const isEven = count % 2 === 0;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div >
+        <h1>{count}</h1>
+        <div className="buttons">
+        <button
+        onClick={() => {
+        setCount(count+1);
+        }}
+        >+1</button>
+             <button
+        onClick={() => {
+        setCount(count-1);
+        }}
+        >-1</button>
+        </div>
+       {count >= 0 &&  (   <p>
+          This number is{" "}
+          <span style={{ color: isEven ? "blue" : "orange" }}>
+            {isEven ? "even" : "single"}
+          </span>
+        </p>)}
+      </div>
     </div>
-  );
+  )
 }
 
 export default App;
+
