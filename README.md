@@ -7,9 +7,6 @@ Bu küçük React uygulaması ile bir sayıyı +1 ve -1 butonlarıyla artırıp 
 - Koşullu render
 - Basit buton etkileşimi
 
-## Ekran Görüntüsü
-> Ekle istersen: `public/screenshot.png`
-
 ## Başlatmak için
 ```bash
 npm install
